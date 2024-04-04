@@ -8,10 +8,10 @@
 <body>
     <nav>
         <ul>
-            <li>Acceuil</li>
-            <li>Se connecter</li>
-            <li>Créer un compte</li>
-            <li>Créer un Article</li>
+            <li><a href="./index.php">Acceuil</a></li>
+            <li><a href="./pages/Login.php">Se connecter</a></li>
+            <li><a href="./pages/CreateAccount.php">Créer un compte</a></li>
+            <li><a href="./pages/CreateArticle.php">Créer un Article</a></li>
         </ul>
     </nav>
 
