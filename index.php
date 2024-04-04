@@ -6,6 +6,15 @@
     <title>OnlineMarket</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li>Acceuil</li>
+            <li>Se connecter</li>
+            <li>Créer un compte</li>
+            <li>Créer un Article</li>
+        </ul>
+    </nav>
+
     <h1>Online Market</h1> 
 </body>
 </html>
