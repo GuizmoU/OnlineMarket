@@ -13,5 +13,6 @@
         <input type="text" id="password" name="password">
         <button type="submit">Créer un compte</button>
    </form> 
+   <a href="./Login.php">Se connecter</a>
 </body>
 </html>
