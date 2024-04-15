@@ -16,6 +16,7 @@ function user_exists($username, $pdo) {
 
     // récuperer le résultat du query
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    var_dump($result);
     return $result;
 }
 

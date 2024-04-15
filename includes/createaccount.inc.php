@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // vérifier si l'utilisateur existe déjâ
     if (user_exists($username, $pdo)) {
         header("Location: ../pages/CreateAccount.php");
+        exit();
     }
 
     // Ajout du compte à la base de donnée
@@ -31,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     }
+
+    //header("Location: ../index.php");
 } else {
     // renvoyer l'utilisateur vers la page de création du compte
     header("Location: ../pages/CreateAccount.php");
