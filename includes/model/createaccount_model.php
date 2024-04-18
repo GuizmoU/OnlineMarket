@@ -16,11 +16,17 @@ function user_exists($username, $pdo) {
 
     // récuperer le résultat du query
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    var_dump($result);
     return $result;
 }
 
 function create_user($username, $pwd, $pdo) {
+    $options = [
+        "cost" => 12,
+    ];
+    
+    // crypter le mot de passe
+    $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
+
     // query
     $query = "INSERT INTO users (username, pwd) VALUES (:username, :pwd);";
 
@@ -29,7 +35,7 @@ function create_user($username, $pwd, $pdo) {
 
     // Appliquer les valeurs
     $stmt->bindParam(":username", $username);
-    $stmt->bindParam(":pwd", $pwd);
+    $stmt->bindParam(":pwd", $hashedPwd);
 
     // executer le statement
     $stmt->execute();

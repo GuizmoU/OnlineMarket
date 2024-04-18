@@ -11,11 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"];
 
     // vérifier si les infos sont vides ou non
-    if ($username == "") {
+    if (empty(trim($username))) {
         header("Location: ../pages/CreateAccount.php");
+        exit();
     } 
-    if ($password == "") {
+    if (empty(trim($password))) {
         header("Location: ../pages/CreateAccount.php");
+        exit();
     } 
 
     // vérifier si l'utilisateur existe déjâ
@@ -33,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Query failed: " . $e->getMessage());
     }
 
-    //header("Location: ../index.php");
+    header("Location: ../index.php");
 } else {
     // renvoyer l'utilisateur vers la page de création du compte
     header("Location: ../pages/CreateAccount.php");
