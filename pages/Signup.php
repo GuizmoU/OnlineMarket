@@ -6,7 +6,7 @@
     <title>Créer un compte</title>
 </head>
 <body>
-   <form action="../includes/controller/signup.inc.php" method="post">
+   <form action="../includes/controller/signup_controller.inc.php" method="post">
         <label for="username">Nom d'utilisateur</label>
         <input type="text" id="username" name="username">
         <label for="password">Mot de passe</label>
