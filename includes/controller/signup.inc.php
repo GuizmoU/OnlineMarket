@@ -3,8 +3,8 @@
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // requires
-    require_once "./model/signup_model.php";
-    require_once "./dbh.inc.php";
+    require_once "../model/signup_model.php";
+    require_once "../dbh.inc.php";
 
     // récuperer les informations de l'utilisateur
     $username = $_POST["username"];
@@ -12,17 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // vérifier si les infos sont vides ou non
     if (empty(trim($username))) {
-        header("Location: ../pages/Signup.php");
+        //$_SESSION["errors"] = ["signup" => "Pleaser enter a username"];
+        header("Location: ../../pages/Signup.php");
         exit();
     } 
     if (empty(trim($password))) {
-        header("Location: ../pages/Signup.php");
+        //$_SESSION["errors"] = ["signup" => "Please enter a password"];
+        header("Location: ../../pages/Signup.php");
         exit();
     } 
 
     // vérifier si l'utilisateur existe déjâ
     if (user_exists($username, $pdo)) {
-        header("Location: ../pages/Signup.php");
+        //$_SESSION["errors"] = ["signup" => "This username is already taken"];
+        header("Location: ../../pages/Signup.php");
         exit();
     }
 
@@ -38,5 +41,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Location: ../index.php");
 } else {
     // renvoyer l'utilisateur vers la page de création du compte
-    header("Location: ../pages/Signup.php");
+    header("Location: ../../pages/Signup.php");
 }
