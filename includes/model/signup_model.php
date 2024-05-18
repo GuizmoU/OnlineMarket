@@ -40,3 +40,7 @@ function create_user($username, $pwd, $pdo) {
     // executer le statement
     $stmt->execute();
 }
+
+function handle_error($msg) {
+    $_SESSION["error"] = $msg;
+}

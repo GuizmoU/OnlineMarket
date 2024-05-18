@@ -3,6 +3,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // requires
+    require_once "../config_session.inc.php";
     require_once "../model/signup_model.php";
     require_once "../dbh.inc.php";
 
@@ -12,19 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // vérifier si les infos sont vides ou non
     if (empty(trim($username))) {
-        //$_SESSION["errors"] = ["signup" => "Pleaser enter a username"];
+        handle_error("Please enter a username");
         header("Location: ../../pages/Signup.php");
         exit();
     } 
     if (empty(trim($password))) {
-        //$_SESSION["errors"] = ["signup" => "Please enter a password"];
+        handle_error("Please enter a password");
         header("Location: ../../pages/Signup.php");
         exit();
     } 
 
     // vérifier si l'utilisateur existe déjâ
     if (user_exists($username, $pdo)) {
-        //$_SESSION["errors"] = ["signup" => "This username is already taken"];
+        handle_error("This username is already taken");
         header("Location: ../../pages/Signup.php");
         exit();
     }
