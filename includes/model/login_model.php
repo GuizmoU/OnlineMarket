@@ -21,6 +21,7 @@ function login($pdo, $username, $password) {
         echo "Successfully connected";
 
         // enregistrer l'utilisateur dans la session
+        $_SESSION["user_id"] = $result["id"];
 
         return True;
     } else {
