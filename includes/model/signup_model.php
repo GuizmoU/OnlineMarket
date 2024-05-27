@@ -42,5 +42,5 @@ function create_user($username, $pwd, $pdo) {
 }
 
 function handle_error($msg) {
-    $_SESSION["error"] = $msg;
+    $_SESSION["error"] = ["signup" => $msg];
 }

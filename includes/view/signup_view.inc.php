@@ -2,6 +2,8 @@
 
 
 function handle_error() {
-     echo($_SESSION["error"]);
+     if (isset($_SESSION["error"])) {
+          echo("<p class='error'>" . $_SESSION["error"]["signup"] . "</p>");
+     }
 }
 

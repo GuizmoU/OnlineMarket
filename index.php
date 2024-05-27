@@ -8,6 +8,7 @@
 
 <body>
     <nav>
+        <?php var_dump($_SESSION["user_id"]); ?>
         <ul>
             <li><a href="./index.php">Acceuil</a></li>
             <li><a href="./pages/Login.php">Se connecter</a></li>
