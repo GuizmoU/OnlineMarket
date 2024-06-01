@@ -15,12 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // vérification erreurs
     // vérifier si les infos sont vides ou non
     if (empty(trim($username))) {
-        handle_error("Please enter a username");
+        handle_error("Veuillez entrez un nom d'utilisateur");
         header("Location: ../../pages/Login.php");
         exit();
     } 
     if (empty(trim($password))) {
-        handle_error("Please enter a password");
+        handle_error("Veuillez entrez un mot de passe");
         header("Location: ../../pages/Login.php");
         exit();
     } 
@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (login($pdo, $username, $password)) {
             header("Location: ../../index.php");
         } else {
+            handle_error("Le mot de passe ou l'utilisateur est faux");
             header("Location: ../../pages/Login.php");
         }
 

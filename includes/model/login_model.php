@@ -29,3 +29,7 @@ function login($pdo, $username, $password) {
     }
 
 }
+
+function handle_error($msg) {
+    $_SESSION["error"] = ["login" => $msg];
+}

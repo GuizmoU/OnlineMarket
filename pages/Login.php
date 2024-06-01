@@ -1,3 +1,8 @@
+<?php
+    require_once "../includes/config_session.inc.php";
+    require_once "../includes/view/login_view.inc.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +16,9 @@
         <input type="text" id="username" name="username">
         <label for="password">Mot de passe</label>
         <input type="text" id="password" name="password">
+        <?php 
+            handle_error();
+        ?>
         <button type="submit">Se connecter</button>
    </form> 
    <a href="./Signup.php">Créer un compte</a>

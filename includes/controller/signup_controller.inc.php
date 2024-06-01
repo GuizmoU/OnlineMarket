@@ -13,19 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // vérifier si les infos sont vides ou non
     if (empty(trim($username))) {
-        handle_error("Please enter a username");
+        handle_error("Veuillez entrez un nom d'utilisateur");
         header("Location: ../../pages/Signup.php");
         exit();
     } 
     if (empty(trim($password))) {
-        handle_error("Please enter a password");
+        handle_error("Veuillez entrez un mot de passe");
         header("Location: ../../pages/Signup.php");
         exit();
     } 
 
     // vérifier si l'utilisateur existe déjâ
     if (user_exists($username, $pdo)) {
-        handle_error("This username is already taken");
+        handle_error("Ce nom d'utilisateur est déjà pris");
         header("Location: ../../pages/Signup.php");
         exit();
     }
