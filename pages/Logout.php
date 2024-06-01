@@ -7,6 +7,8 @@
 </head>
 <body>
     <p>Etes-vous sûr de vouloir vous déconnecter ?</p>
-    <button>Oui</button>
+    <form action="../includes/controller/logout_controller.inc.php" method="post">
+        <button type="submit">Oui</button>
+    </form>
 </body>
 </html>

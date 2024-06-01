@@ -13,6 +13,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"];
 
     // vérification erreurs
+    // vérifier si les infos sont vides ou non
+    if (empty(trim($username))) {
+        handle_error("Please enter a username");
+        header("Location: ../../pages/Login.php");
+        exit();
+    } 
+    if (empty(trim($password))) {
+        handle_error("Please enter a password");
+        header("Location: ../../pages/Login.php");
+        exit();
+    } 
 
     // connexion
     try {

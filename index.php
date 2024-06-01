@@ -19,10 +19,12 @@
                         <li><a href='./pages/Signup.php'>Créer un compte</a></li>
                     ";
                 } else {
-                    echo "<li><a href='./pages/Logout.php'>Logout</a></li>";
+                    echo "
+                        <li><a href='./pages/Logout.php'>Se déconnecter</a></li>
+                        <li><a href='./pages/CreateArticle.php'>Créer un Article</a></li>
+                    ";
                 }
             ?>
-            <li><a href="./pages/CreateArticle.php">Créer un Article</a></li>
         </ul>
     </nav>
 
