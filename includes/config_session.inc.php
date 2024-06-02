@@ -16,7 +16,6 @@ session_set_cookie_params([
 
 // changer l'id de la session chaque 30 minutes
 if (!isset($_SESSION["last_regeneration"])) {
-    var_dump($_SESSION["last_regeneration"]);
     regenerate_session_id();
 } else {
     $interval = 30 * 60;
