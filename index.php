@@ -23,6 +23,7 @@
                 } else {
                     echo "
                         <li><a href='./pages/Logout.php'>Se déconnecter</a></li>
+                        <li><a href='./pages/DeleteAccount.php'>Supprimer ce compte</a></li>
                         <li><a href='./pages/CreateArticle.php'>Créer un Article</a></li>
                     ";
                 }
