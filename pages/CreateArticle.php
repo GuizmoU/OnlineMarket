@@ -6,6 +6,14 @@
     <title>Créer un article</title>
 </head>
 <body>
-    
+    <form action="../includes/controller/createarticle_controller.inc.php" method="post">
+        <label for="title">Titre</label>
+        <input type="text" id="title" name="title">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description">
+        <label for="price">Prix</label>
+        <input type="text" id="price" name="price">
+        <button type="submit">Créer un article</button>
+    </form> 
 </body>
 </html>
