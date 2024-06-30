@@ -5,8 +5,24 @@ function handle_error($msg) {
 }
 
 function createarticle($title, $description, $price, $pdo) {
-    $username = "frank";
+    // GET USERNAME
+    // query
+    $query = "SELECT * FROM users WHERE id=:id";
 
+    // sécurisation
+    $stmt = $pdo->prepare($query);
+
+    // application des valeurs
+    $stmt->bindParam(":id", $_SESSION["user_id"]);
+
+    // éxecution
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $username = $result["username"];
+
+
+    // CREATE ARTICLE
     // query
     $query = "INSERT INTO articles (username, title, info, user_id, price) VALUES (:username, :title, :info, :user_id, :price);";
 

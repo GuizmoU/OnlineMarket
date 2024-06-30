@@ -1,4 +1,5 @@
 <?php 
+    require_once "./includes/dbh.inc.php";
     require_once "./includes/config_session.inc.php"; 
 ?>
 
@@ -32,5 +33,37 @@
     </nav>
 
     <h1>Online Market</h1> 
+
+    <!-- AFFICHAGE DES ARTICLES -->
+    <main>
+        <?php
+            // Récuperer tous les articles
+            $query = "SELECT * FROM articles;";
+
+            $stmt = $pdo->prepare($query);
+
+
+            $stmt->execute();
+
+            // récuperer le résultat du query
+            $result = $stmt->fetchAll();
+
+            foreach($result as $article) {
+                $title = $article["title"];
+                $description = $article["info"];
+                $username = $article["username"];
+
+        ?>
+
+        <!-- Article_-->
+        <div>
+            <p><?php echo $title; ?></p>
+            <p><?php echo $description; ?></p>
+            <p>Vendu par <?php echo $username; ?></p>
+            <a href="#">Details</a>
+        </div>
+
+        <?php } ?>
+    </main>
 </body>
 </html>
