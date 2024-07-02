@@ -51,15 +51,18 @@
             foreach($result as $article) {
                 $title = $article["title"];
                 $description = $article["info"];
-                $username = $article["username"];
+                $seller = $article["username"];
 
+                if ($article["user_id"] == $_SESSION["user_id"]) {
+                    $seller = "Vous";
+                }
         ?>
 
         <!-- Article_-->
         <div>
             <p><?php echo $title; ?></p>
             <p><?php echo $description; ?></p>
-            <p>Vendu par <?php echo $username; ?></p>
+            <p>Vendu par <?php echo $seller; ?></p>
             <a href="#">Details</a>
         </div>
 
