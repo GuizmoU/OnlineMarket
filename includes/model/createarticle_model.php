@@ -4,6 +4,24 @@ function handle_error($msg) {
     $_SESSION["error"] = ["createarticle" => $msg];
 }
 
+function check_article($pdo, $title) {
+    // query
+    $query = "SELECT * FROM articles WHERE user_id=:user_id AND title=:title;";
+
+    // sécurisation
+    $stmt = $pdo->prepare($query);
+
+    // application des valeurs
+    $stmt->bindParam(":user_id", $_SESSION["user_id"]);// récupération de l'id de l'utilisateur
+    $stmt->bindParam(":title", $title);
+
+    // éxecution
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
 function createarticle($title, $description, $price, $pdo) {
     // GET USERNAME
     // query

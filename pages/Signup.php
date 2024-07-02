@@ -16,12 +16,10 @@
         <input type="text" id="username" name="username">
         <label for="password">Mot de passe</label>
         <input type="text" id="password" name="password">
-        <p>
         <?php
             // affichage des erreurs
             handle_error();
         ?>
-        </p>
         <button type="submit">Créer un compte</button>
    </form> 
    <a href="./Login.php">Se connecter</a>

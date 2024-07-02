@@ -30,6 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } 
 
     // vérifier si l'utilisateur a déjâ créer un article avec le même titre
+    if (check_article($pdo, $title)) {
+        handle_error("Vous avez déjà créer un article contenant le même titre");
+        header("Location: ../../pages/CreateArticle.php");
+        exit();
+    }
 
     // créer l'article
     try {

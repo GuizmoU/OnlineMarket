@@ -1,3 +1,8 @@
+<?php
+    require_once "../includes/config_session.inc.php";
+    require_once "../includes/view/createarticle_view.inc.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +18,7 @@
         <input type="text" id="description" name="description">
         <label for="price">Prix</label>
         <input type="text" id="price" name="price">
+        <?php handle_error(); ?>
         <button type="submit">Créer un article</button>
     </form> 
 </body>
