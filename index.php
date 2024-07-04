@@ -16,19 +16,14 @@
         <ul>
             <li><a href="./index.php">Acceuil</a></li>
             <?php 
-                if (!isset($_SESSION["user_id"])) {
-                    echo "
-                        <li><a href='./pages/Login.php'>Se connecter</a></li>
-                        <li><a href='./pages/Signup.php'>Créer un compte</a></li>
-                    ";
-                } else {
-                    echo "
-                        <li><a href='./pages/Logout.php'>Se déconnecter</a></li>
-                        <li><a href='./pages/DeleteAccount.php'>Supprimer ce compte</a></li>
-                        <li><a href='./pages/CreateArticle.php'>Créer un Article</a></li>
-                    ";
-                }
-            ?>
+                if (!isset($_SESSION["user_id"])) { ?>
+                        <li><a href="./pages/Login.php">Se connecter</a></li>
+                        <li><a href="./pages/Signup.php">Créer un compte</a></li>
+                <?php } else { ?>
+                        <li><a href="./pages/Logout.php">Se déconnecter</a></li>
+                        <li><a href="./pages/DeleteAccount.php">Supprimer ce compte</a></li>
+                        <li><a href="./pages/CreateArticle.php">Créer un Article</a></li>
+                <?php } ?>
         </ul>
     </nav>
 
