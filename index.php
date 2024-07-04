@@ -60,9 +60,9 @@
 
         <!-- Article_-->
         <div>
-            <p><?php echo $title; ?></p>
-            <p><?php echo $description; ?></p>
-            <p>Vendu par <?php echo $seller; ?></p>
+            <p><?php echo htmlspecialchars($title); ?></p>
+            <p><?php echo htmlspecialchars($description); ?></p>
+            <p>Vendu par <?php echo htmlspecialchars($seller); ?></p>
             <a href=<?php echo "./pages/Details.php?" . http_build_query($article) ?>>Details</a>
         </div>
 
