@@ -16,7 +16,7 @@ function verify_user($article) {
     if ($_SESSION["user_id"] == $article["user_id"]) {
         echo "
             <a href=''>Modifier mon article</a>
-            <a href=''>Supprimer mon article</a>
+            <a href='../../pages/DeleteArticle.php?id=" . $article["id"] . "'>Supprimer mon article</a>
         ";
     } else {
         echo "<button>Acheter</button>";
