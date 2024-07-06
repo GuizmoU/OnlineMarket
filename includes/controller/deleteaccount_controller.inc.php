@@ -15,4 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Query failed: " . $e->getMessage());
     }
     header("location: ../../index.php");
+} else {
+    // renvoyer l'utilisateur vers la page de création du compte
+    header("Location: ../../index.php");
 }

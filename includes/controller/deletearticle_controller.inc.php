@@ -14,4 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     header("location: ../../index.php");
+} else {
+    // renvoyer l'utilisateur vers la page de création du compte
+    header("Location: ../../index.php");
 }

@@ -15,7 +15,7 @@ function get_article() {
 function verify_user($article) {
     if ($_SESSION["user_id"] == $article["user_id"]) {
         echo "
-            <a href=''>Modifier mon article</a>
+            <a href='../../pages/ModifyArticle.php?" . http_build_query($article) . "'>Modifier mon article</a>
             <a href='../../pages/DeleteArticle.php?id=" . $article["id"] . "'>Supprimer mon article</a>
         ";
     } else {

@@ -54,7 +54,7 @@
         ?>
 
         <!-- Article_-->
-        <div>
+        <div class="article">
             <p><?php echo htmlspecialchars($title); ?></p>
             <p><?php echo htmlspecialchars($description); ?></p>
             <p>Vendu par <?php echo htmlspecialchars($seller); ?></p>
