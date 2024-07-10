@@ -11,6 +11,20 @@
     <title>Details</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="../index.php">Acceuil</a></li>
+            <?php 
+                if (!isset($_SESSION["user_id"])) { ?>
+                        <li><a href="./Login.php">Se connecter</a></li>
+                        <li><a href="./Signup.php">Créer un compte</a></li>
+                <?php } else { ?>
+                        <li><a href="./Logout.php">Se déconnecter</a></li>
+                        <li><a href="./DeleteAccount.php">Supprimer ce compte</a></li>
+                        <li><a href="./CreateArticle.php">Créer un Article</a></li>
+                <?php } ?>
+        </ul>
+    </nav>
     <?php $article = get_article(); ?>
     <section>
         <div>
