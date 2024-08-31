@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logout</title>
 </head>
+<style>
+    <?php include "../styles/main.css" ?>
+</style>
 <body>
     <nav>
         <ul>

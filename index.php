@@ -8,9 +8,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
     <title>OnlineMarket</title>
-
+</head>
+<style>
+    <?php include "./styles/main.css" ?>
+    <?php include "./styles/index.css" ?>
+</style>
 <body>
     <nav>
         <ul>
