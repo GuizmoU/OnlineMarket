@@ -5,6 +5,15 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+h1 {
+    background-color: rgb(231, 231, 231);
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 1em;
+}
+
 .article {
     background-color: rgb(209, 209, 209);
     margin: 10px;

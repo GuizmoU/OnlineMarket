@@ -32,7 +32,7 @@
         <label for="title">Titre</label>
         <input type="text" id="title" name="title">
         <label for="description">Description</label>
-        <input type="text" id="description" name="description">
+        <textarea type="text" id="description" name="description"></textarea>
         <label for="price">Prix</label>
         <input type="text" id="price" name="price">
         <?php handle_error(); ?>

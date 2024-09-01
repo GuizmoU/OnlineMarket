@@ -41,3 +41,20 @@ a::before {
 a:hover::before {
     width: 100%;
 }
+
+.error {
+    color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(209, 209, 209);
+    padding: 3em;
+    border-radius: 3vw;
+}
+
+textarea {
+    max-width: 50vw;
+    min-width: 20vw;
+}

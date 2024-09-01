@@ -33,7 +33,7 @@
         <label for="title">Titre</label>
         <input type="text" id="title" name="title" value=<?php echo $_GET["title"] ?>>
         <label for="description">Description</label>
-        <input type="text" id="description" name="description" value='<?php echo $_GET["info"] ?>'>
+        <textarea type="text" id="description" name="description"><?php echo $_GET["info"] ?></textarea>
         <label for="price">Prix</label>
         <input type="text" id="price" name="price" value=<?php echo $_GET["price"] ?>>
         <?php handle_error() ?>
