@@ -12,6 +12,7 @@
 </head>
 <style>
     <?php include "../styles/main.css" ?>
+    <?php include "../styles/details.css" ?>
 </style>
 <body>
     <nav>

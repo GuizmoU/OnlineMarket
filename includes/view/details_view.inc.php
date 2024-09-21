@@ -19,6 +19,6 @@ function verify_user($article) {
             <a href='../../pages/DeleteArticle.php?id=" . $article["id"] . "'>Supprimer mon article</a>
         ";
     } else {
-        echo "<button>Acheter</button>";
+        echo "<a href='#'>Acheter</a>";
     }
 }
