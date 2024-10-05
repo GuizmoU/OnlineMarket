@@ -19,6 +19,6 @@ function verify_user($article) {
             <a href='../../pages/DeleteArticle.php?id=" . $article["id"] . "'>Supprimer mon article</a>
         ";
     } else {
-        echo "<a href='#'>Acheter</a>";
+        echo "<a href='../includes/controller/details_controller.inc.php?id=" . $article["id"] . "'>Ajouter au panier</a>";
     }
 }

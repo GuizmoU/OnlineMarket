@@ -26,6 +26,7 @@
                         <li><a href="./Logout.php">Se déconnecter</a></li>
                         <li><a href="./DeleteAccount.php">Supprimer ce compte</a></li>
                         <li><a href="./CreateArticle.php">Créer un Article</a></li>
+                        <li><a href="./Bag.php">Panier</a></li>
                 <?php } ?>
         </ul>
     </nav>
