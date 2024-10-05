@@ -18,7 +18,11 @@ function verify_user($article) {
             <a href='../../pages/ModifyArticle.php?" . http_build_query($article) . "'>Modifier mon article</a>
             <a href='../../pages/DeleteArticle.php?id=" . $article["id"] . "'>Supprimer mon article</a>
         ";
+    } else if (!$_GET["bag"]) {
+        if (isset($_SESSION["user_id"])) {
+            echo "<a href='../includes/controller/details_controller.inc.php?id=" . $article["id"] . "'>Ajouter au panier</a>";
+        }
     } else {
-        echo "<a href='../includes/controller/details_controller.inc.php?id=" . $article["id"] . "'>Ajouter au panier</a>";
+        echo "<a href='../includes/controller/bag_controller.inc.php?id=" . $article["id"] . "'>Supprimer du panier</a>";
     }
 }

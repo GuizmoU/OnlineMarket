@@ -25,22 +25,26 @@ function addArticle($id, $pdo) {
     $prev_bag = $result["bag"];
 
     if ($prev_bag != null) {
-        $bag = $prev_bag . "," . strval($id);
+        if (!str_contains($prev_bag, $id)) {
+            $bag = $prev_bag . strval($id) . ",";
+        }
     } else {
-        $bag = strval($id);
+        $bag = strval($id) . ",";
     }
 
     // ADD ARTICLE
     // query
-    $query = "UPDATE users SET bag=:bag WHERE id=:id;";
+    if (!str_contains($prev_bag, $id)) {
+        $query = "UPDATE users SET bag=:bag WHERE id=:id;";
 
-    // sécuriser le query en créant un statement
-    $stmt = $pdo->prepare($query);
+        // sécuriser le query en créant un statement
+        $stmt = $pdo->prepare($query);
 
-    // Appliquer les valeurs
-    $stmt->bindParam(":bag", $bag);
-    $stmt->bindParam(":id", $user_id);
+        // Appliquer les valeurs
+        $stmt->bindParam(":bag", $bag);
+        $stmt->bindParam(":id", $user_id);
 
-    // executer le statement
-    $stmt->execute();
+        // executer le statement
+        $stmt->execute();
+    }
 }

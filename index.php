@@ -62,7 +62,7 @@
             <p><?php echo htmlspecialchars($title); ?></p>
             <p><?php echo htmlspecialchars($description); ?></p>
             <p>Vendu par <?php echo htmlspecialchars($seller); ?></p>
-            <a href=<?php echo "./pages/Details.php?" . http_build_query($article) ?>>Details</a>
+            <a href=<?php echo "./pages/Details.php?" . http_build_query($article) . "&bag=0"?>>Details</a>
         </div>
 
         <?php } ?>

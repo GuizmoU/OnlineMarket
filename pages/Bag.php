@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
     <nav>
@@ -30,22 +31,47 @@
 
     <main>
         <?php
-            echo $_SESSION["id"];
             // Récuperer 
             $query = "SELECT * FROM users WHERE id=:id;";
 
             $stmt = $pdo->prepare($query);
 
-            $stmt->bindParam(":id", $_SESSION["id"]);
+            $stmt->bindParam(":id", $_SESSION["user_id"]);
 
             $stmt->execute();
 
             // récuperer le résultat du query
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            var_dump($result);
-            echo $result["bag"];
+            $articlesId = explode(",", $result["bag"]);
 
-        ?>
+            foreach ($articlesId as $key => $value) {
+                $query = "SELECT * FROM articles WHERE id=:id;";
+
+                $stmt = $pdo->prepare($query);
+                $stmt->bindParam(":id", $value);
+
+                $stmt->execute();
+
+                // récuperer le résultat du query
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                $article = $result;
+
+                $title = $result["title"];
+                $description = $result["info"];
+                $seller = $article["username"];
+                
+                if (!empty($value)) {
+            ?>
+
+        <div class="article">
+            <p><?php echo htmlspecialchars($title); ?></p>
+            <p><?php echo htmlspecialchars($description); ?></p>
+            <p>Vendu par <?php echo htmlspecialchars($seller) ?></p>
+            <a href=<?php echo "./Details.php?" . http_build_query($article) . "&bag=1"?>>Details</a>
+        </div>
+
+
+        <?php }}?>
     </main>
 </body>
 </html>
