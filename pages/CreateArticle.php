@@ -16,7 +16,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../index.php">Acceuil</a></li>
+            <li><a href="../index.php">Accueil</a></li>
             <?php 
                 if (!isset($_SESSION["user_id"])) { ?>
                         <li><a href="./Login.php">Se connecter</a></li>
